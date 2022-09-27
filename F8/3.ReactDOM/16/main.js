@@ -1,0 +1,13 @@
+"use strict";
+// const h1DOM = document.createElement('h1') as HTMLElement;
+// h1DOM.title = "Hello" as string;
+// h1DOM. className = 'heading' as string;
+exports.__esModule = true;
+// h1DOM.innerText = 'Hello Guys';
+// document.body.appendChild(h1DOM);
+var react_1 = require("react");
+var react_dom_1 = require("react-dom");
+var h1DOM = document.createElement("h1");
+var h1React = react_1["default"].createElement("h1", { title: "Hello", className: "dohung" }, "HungDo");
+react_dom_1["default"].render(h1React, h1DOM);
+console.log(h1React);

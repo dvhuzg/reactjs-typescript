@@ -4,7 +4,7 @@ type ResultObject = {
 type ArrayParam = ((number|string)[])[]
 function arrToObj( arr: ArrayParam ) {
     return arr.reduce(( obj: ResultObject,item: (number|string)[] ) : ResultObject=> {
-        return {...obj,[item[0]] : item[1]}
+        return {...obj,[item[0]] : item[1]};
     },{})
 }
 const obj1 = arrToObj([
