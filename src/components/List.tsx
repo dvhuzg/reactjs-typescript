@@ -1,15 +1,9 @@
 import React from "react";
 import "../css/List.css";
 import { IState as IProps } from "../App";
-// interface IProps{
-//   people:{
-//     name:string,
-//     age:number,
-//     bio:string
-//   }[]
-// }
-const List = ({ people }: IProps) => {
-  const renderList = (): JSX.Element[] => {
+
+const List = ({ people }: IProps): JSX.Element => {
+  const renderList = ():JSX.Element[] => {
     return people.map((person) => {
       return (
         <div className="list-item-container">

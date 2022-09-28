@@ -5,18 +5,17 @@ import './App.css'
 
 export interface IState{
   people:{
-    name:string, 
+    name:string,
     age:number, 
     bio:string
   }[]
 }
 const App = () => {
-  const [people, setPeople] = useState<IState["people"]>([]);
 
-
+  const [people, setPeople] = useState<IState['people']>([]);
   return (
-    <div className='container'>
-      <Form people={people} setPeople = {setPeople}/>
+    <div className="container">
+      <Form people={people} setPeople={setPeople}/>
       <List people={people}/>
     </div>
   )
