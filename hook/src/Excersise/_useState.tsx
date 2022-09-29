@@ -1,3 +1,5 @@
+// doc code tu tren xuong, ban dau useState se lay gia tri khoi tao render ra giao dien, code chay den ham setState nhung chi khoi tao ham chu chua lam gi, khi chay xuong duoi, khi onclick goi ham setState thi luc nay ham setState moi thuc thi, set du lieu moi cho state va render lai giao dien.
+
 import React, { useState } from "react";
 
 //--------------Increase Number---------------------
