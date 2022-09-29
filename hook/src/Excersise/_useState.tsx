@@ -9,7 +9,7 @@ const _useState = () => {
     const total: number = course.reduce((total, curr) => {
       return total + curr;
     });
-    console.log(total);
+    // console.log(total);
     return total;
   });
 
@@ -56,8 +56,8 @@ const _useState = () => {
   };
   //--------------Radio Button---------------------
   interface implCourse {
-    id?: number;
-    name?: string;
+    id: number;
+    name: string;
   }
 
   const Course_radio: implCourse[] = [
@@ -88,13 +88,35 @@ const _useState = () => {
     setCheckbox((prev) => {
       const isCheck = checkbox.includes(id);
       if (isCheck) {
-        return checkbox.filter((item) => item != id);
+        return checkbox.filter((item) => item !== id);
       } else {
         return [...prev, id];
       }
     });
   };
+  //--------------Todo List---------------------
+  // type strJobs = [];
+  // const storageJobs= localStorage.getItem('jobs');
+  const [job, setJob] = useState<string>("");
+  // const [jobs, setJobs] = useState<string[]>(JSON.parse(storageJobs ?? '[]'));
+  const [jobs, setJobs] = useState<string[]>(():string[]=>{
+    const storageJobs = localStorage.getItem('jobs');
 
+    return JSON.parse(storageJobs ?? '[]');
+  })
+  const handleJob = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setJob(e.target.value);
+  };
+  const showJobs = ()=>{
+    setJobs(()=>{
+      const newJobs = [...jobs, job];
+      const jsonJobs = JSON.stringify(newJobs);
+      localStorage.setItem('jobs' , jsonJobs);
+      console.log(jsonJobs);
+      return newJobs;
+    });
+    setJob('');
+  }
   return (
     <div>
       <h1>{counter}</h1>
@@ -173,6 +195,17 @@ const _useState = () => {
         })}
         <button type="submit">Submit</button>
       </span>
+      <br />
+      <br />
+      <div>
+        <input value={job} type="text" onChange={handleJob}/>
+        <ul>{jobs.map(job=>{
+          return(
+            <li>{job}</li>
+          )
+        })}</ul>
+        <button type="submit" onClick={showJobs}>Add</button>
+      </div>
     </div>
   );
 };
