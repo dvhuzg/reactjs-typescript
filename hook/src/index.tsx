@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-export function emitMessage(id: number) {
+function emitMessage(id: number) {
   setInterval(() => {
     window.dispatchEvent(
       new CustomEvent(`user-${id}`, {

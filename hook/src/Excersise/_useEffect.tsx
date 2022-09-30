@@ -1,8 +1,8 @@
 //useEffect dung de change DOM, call API
 //useEffect se uu tien render du lieu nguoi dung truoc, roi moi thuc hien ham callback, code van doc tu tren xuong nhung thang useEffect se ngam callback lai doi khi nao ham return chay xong thi no moi chay
-import { count } from "console";
-import React, { useEffect, useState } from "react";
-import { setTimeout } from "timers";
+
+import { useEffect, useState } from "react";
+
 
 interface obj {
   post: {

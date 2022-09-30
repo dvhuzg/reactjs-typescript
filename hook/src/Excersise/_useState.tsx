@@ -21,10 +21,7 @@ const _useState = () => {
 
   //--------------Update Info---------------------
   interface Info {
-    name?: string;
-    age?: number;
-    address?: string;
-    bio?: string;
+    [name:string]:string|number;
   }
 
   const [info, setInfo] = useState<Partial<Info>>({
