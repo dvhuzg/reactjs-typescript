@@ -8,6 +8,7 @@ import _useRef from "./Excersise/_useRef";
 import _useCallback from "./Excersise/_useCallback";
 import _useMemo from "./Excersise/_useMemo";
 import _useReducer from "./Excersise/_useReducer";
+import _useReducer_Todo from "./Excersise/_useReducer_Todo";
 function App() {
   const [showUseState, setShowUseState] = useState(false);
   const [showUseEffect, setShowUseEffect] = useState(false);
@@ -17,6 +18,7 @@ function App() {
   const [showUseCallback, setShowUseCallback] = useState(false);
   const [showUseMemo, setShowUseMemo] = useState(false);
   const [showUseReducer, setShowUseReducer] = useState(false);
+  const [showUseReducer_Todo, setShowUseReducer_Todo] = useState(false);
   return (
     <div className="App">
       <h1>useState</h1>
@@ -64,6 +66,11 @@ function App() {
       </button>
       {showUseReducer && <_useReducer />}
       <p>----------------------------------------------</p>
+      <h1>useReducer_Todo</h1>
+      <button onClick={() => setShowUseReducer_Todo(!showUseReducer_Todo)}>
+        Show useReducer_Todo
+      </button>
+      {showUseReducer_Todo && <_useReducer_Todo />}
     </div>
   );
 }
