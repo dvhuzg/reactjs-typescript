@@ -7,6 +7,7 @@ import _useEffect_2 from "./Excersise/_useEffect_2";
 import _useRef from "./Excersise/_useRef";
 import _useCallback from "./Excersise/_useCallback";
 import _useMemo from "./Excersise/_useMemo";
+import _useReducer from "./Excersise/_useReducer";
 function App() {
   const [showUseState, setShowUseState] = useState(false);
   const [showUseEffect, setShowUseEffect] = useState(false);
@@ -15,6 +16,7 @@ function App() {
   const [showUseRef, setShowUseRef] = useState(false);
   const [showUseCallback, setShowUseCallback] = useState(false);
   const [showUseMemo, setShowUseMemo] = useState(false);
+  const [showUseReducer, setShowUseReducer] = useState(false);
   return (
     <div className="App">
       <h1>useState</h1>
@@ -43,9 +45,7 @@ function App() {
       <p>----------------------------------------------</p>
 
       <h1>useRef</h1>
-      <button onClick={() => setShowUseRef(!showUseRef)}>
-        Show useRef
-      </button>
+      <button onClick={() => setShowUseRef(!showUseRef)}>Show useRef</button>
       {showUseRef && <_useRef />}
       <p>----------------------------------------------</p>
       <h1>useCallback</h1>
@@ -55,10 +55,14 @@ function App() {
       {showUseCallback && <_useCallback />}
       <p>----------------------------------------------</p>
       <h1>useMemo</h1>
-      <button onClick={() => setShowUseMemo(!showUseMemo)}>
-        Show useMemo
-      </button>
+      <button onClick={() => setShowUseMemo(!showUseMemo)}>Show useMemo</button>
       {showUseMemo && <_useMemo />}
+      <p>----------------------------------------------</p>
+      <h1>useReducer</h1>
+      <button onClick={() => setShowUseReducer(!showUseReducer)}>
+        Show useReducer
+      </button>
+      {showUseReducer && <_useReducer />}
       <p>----------------------------------------------</p>
     </div>
   );
