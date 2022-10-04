@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
+interface Image {
+  preview: string;
+}
 const _useEffect_1 = () => {
-  const [showAvt, setShowAvt] = useState<any>();
+  const [showAvt, setShowAvt] = useState<Image>();
   useEffect(() => {
     return () => {
       showAvt && URL.revokeObjectURL(showAvt.preview);

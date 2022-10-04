@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import _useState from "./Excersise/_useState";
 import _useEffect from "./Excersise/_useEffect";
