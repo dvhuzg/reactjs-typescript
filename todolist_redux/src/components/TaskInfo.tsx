@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../hooks";
-
+import styles from "../styles/TaskList.module.scss";
 const TaskInfo = ({
   id,
   title,
@@ -15,11 +15,13 @@ const TaskInfo = ({
   priority: string | undefined;
 }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <h1>{title}</h1>
-      <p>{description}</p>
-      <p>{date}</p>
-      <p>{priority}</p>
+      <div className={styles.extraInfo}>
+        <p>Description: {description}</p>
+        <p>Time: {date}</p>
+        <p>Priority: {priority}</p>
+      </div>
     </div>
   );
 };

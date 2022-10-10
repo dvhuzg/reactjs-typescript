@@ -10,6 +10,7 @@ const AddTask = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const task = useAppSelector((state) =>
     state.task.taskList.find((task) => task.id === id)
   );
@@ -37,8 +38,17 @@ const AddTask = () => {
   return (
     <div>
       <h1>New Task</h1>
+
+      <button
+        className={styles.showListBtn}
+        onClick={() => {
+          navigate("/");
+        }}>
+        List
+      </button>
       <form action="">
         <input
+          required
           value={title}
           type="text"
           className={styles.task}
@@ -64,6 +74,7 @@ const AddTask = () => {
             </label>
             <br />
             <input
+              className={styles.date}
               value={date}
               type="date"
               name="date"
@@ -79,6 +90,7 @@ const AddTask = () => {
             </label>
             <br />
             <select
+              className={styles.priority}
               name="priority"
               id="priority"
               value={priority}
