@@ -11,6 +11,21 @@ const AddTask = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  function padTo2Digits(num: number) {
+    return num.toString().padStart(2, "0");
+  }
+
+  function formatDate(dateTime: Date) {
+    return [
+      padTo2Digits(dateTime.getDate()),
+      padTo2Digits(dateTime.getMonth() + 1),
+      dateTime.getFullYear(),
+    ].join("/");
+  }
+
+  // 👇️ 24/10/2021 (mm/dd/yyyy)
+  const defaultDate = formatDate(new Date());
+
   const task = useAppSelector((state) =>
     state.task.taskList.find((task) => task.id === id)
   );
@@ -19,7 +34,9 @@ const AddTask = () => {
   const [description, setDescription] = useState<string | undefined>(
     task?.description || ""
   );
-  const [date, setDate] = useState<string | undefined>(task?.date || "");
+  const [date, setDate] = useState<string | undefined>(
+    task?.date || defaultDate
+  );
   const [priority, setPriority] = useState<string | undefined>(
     task?.priority || "Normal"
   );
