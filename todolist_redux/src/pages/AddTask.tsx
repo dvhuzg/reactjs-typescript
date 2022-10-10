@@ -47,7 +47,9 @@ const AddTask = () => {
           placeholder="Add new task..."
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label htmlFor="desc">Description</label>
+        <label className={styles.label} htmlFor="desc">
+          Description
+        </label>
         <br />
         <textarea
           value={description}
@@ -55,31 +57,42 @@ const AddTask = () => {
           name="desc"
           id="desc"
           onChange={(e) => setDescription(e.target.value)}></textarea>
-        <div>
-          <label htmlFor="date">Due Date</label>
-          <br />
-          <input
-            value={date}
-            type="date"
-            name="date"
-            id="date"
-            onChange={(e) => setDate(e.target.value)}
-          />
+        <div className={styles.additionalInfo}>
+          <div>
+            <label className={styles.label} htmlFor="date">
+              Due Date
+            </label>
+            <br />
+            <input
+              value={date}
+              type="date"
+              name="date"
+              id="date"
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
 
           <br />
-          <label htmlFor="priority">Priority</label>
-          <br />
-          <select
-            name="priority"
-            id="priority"
-            value={priority}
-            onChange={(e) => setPriority(e.target.value)}>
-            <option value="Low">Low</option>
-            <option value="Normal">Normal</option>
-            <option value="High">High</option>
-          </select>
+          <div>
+            <label className={styles.label} htmlFor="priority">
+              Priority
+            </label>
+            <br />
+            <select
+              name="priority"
+              id="priority"
+              value={priority}
+              onChange={(e) => setPriority(e.target.value)}>
+              <option value="Low">Low</option>
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+            </select>
+          </div>
         </div>
-        <button type="submit" onClick={handleOnSubmit}>
+        <button
+          className={styles.btnSubmit}
+          type="submit"
+          onClick={handleOnSubmit}>
           Add
         </button>
       </form>

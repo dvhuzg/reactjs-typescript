@@ -1,4 +1,24 @@
 .task,
 .desc {
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
+.desc {
+  border: 2px solid rgb(41, 39, 39);
+}
+.label {
+  text-align: left;
+  font-weight: bold;
+  float: left;
+  margin-bottom: 5px;
+}
+.additionalInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.btnSubmit {
   width: 100%;
+  padding: 10px 20px;
 }

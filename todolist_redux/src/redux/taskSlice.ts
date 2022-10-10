@@ -14,12 +14,10 @@ export const taskSlice = createSlice({
   reducers: {
     addNewTask: (state, action: PayloadAction<TaskState>) => {
       state.taskList.push(action.payload);
-
       const jsonTask = JSON.stringify(state.taskList);
       localStorage.setItem("tasks", jsonTask);
     },
   },
 });
-
 export const { addNewTask } = taskSlice.actions;
 export default taskSlice.reducer;
