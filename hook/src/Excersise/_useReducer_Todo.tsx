@@ -1,11 +1,7 @@
 import React from "react";
 import { useReducer } from "react";
 
-interface IState {
-  [name: string]: string | [];
-}
-
-const initState: IState = {
+const initState = {
   job: "",
   jobs: [],
 };
@@ -14,14 +10,14 @@ const SET_JOB = "set_job";
 const ADD_JOB = "add_job";
 const DELETE_JOB = "delete_job";
 
-const setJob = (payload: any) => {
+const setJob = (payload: string) => {
   return {
     type: SET_JOB,
     payload,
   };
 };
 
-const reducer = (state: any, action: any) => {};
+const reducer = (state: {}, action: string) => {};
 
 const _useReducer_Todo = () => {
   const [state, dispatch] = useReducer<any>(reducer, initState);

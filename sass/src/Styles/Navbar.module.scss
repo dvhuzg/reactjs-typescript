@@ -1,0 +1,19 @@
+@import "../Variables/variables.scss";
+.navbar {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(44, 88, 127);
+  text-align: center;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  &:hover {
+    color: $defaultBackground;
+    text-decoration: line-through;
+  }
+}
