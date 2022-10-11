@@ -23,13 +23,12 @@ const AddTask = () => {
     ].join("/");
   }
 
-  // 👇️ 24/10/2021 (mm/dd/yyyy)
   const defaultDate = formatDate(new Date());
 
   const task = useAppSelector((state) =>
     state.task.taskList.find((task) => task.id === id)
   );
-  const [title, setTitle] = useState<string | undefined>(task?.title || "");
+  const [title, setTitle] = useState<string | undefined>(task?.title);
 
   const [description, setDescription] = useState<string | undefined>(
     task?.description || ""
@@ -42,9 +41,15 @@ const AddTask = () => {
   );
 
   const handleOnSubmit = () => {
-    dispatch(addNewTask({ title, description, date, priority, id: uuidv4() }));
-    clearInputs();
-    navigate("/");
+    if (title) {
+      dispatch(
+        addNewTask({ title, description, date, priority, id: uuidv4() })
+      );
+      clearInputs();
+      navigate("/");
+    } else {
+      alert("F**king hand man, insert title or being shot! ");
+    }
   };
   const clearInputs = () => {
     setTitle("");
@@ -85,7 +90,7 @@ const AddTask = () => {
           id="desc"
           onChange={(e) => setDescription(e.target.value)}></textarea>
         <div className={styles.additionalInfo}>
-          <div>
+          <div className={styles.dateContainer}>
             <label className={styles.label} htmlFor="date">
               Due Date
             </label>
@@ -101,7 +106,7 @@ const AddTask = () => {
           </div>
 
           <br />
-          <div>
+          <div className={styles.priorityContainer}>
             <label className={styles.label} htmlFor="priority">
               Priority
             </label>

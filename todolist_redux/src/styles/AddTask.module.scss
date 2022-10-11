@@ -21,9 +21,14 @@
 .date,
 .priority {
   padding: 5px 10px;
+  width: 100%;
   &:hover {
     cursor: pointer;
   }
+}
+.date::-webkit-calendar-picker-indicator {
+  border-left: 1px solid #000;
+  padding-left: 10px;
 }
 .btnSubmit {
   width: 100%;
@@ -48,4 +53,8 @@
     cursor: pointer;
     opacity: 0.7;
   }
+}
+.dateContainer,
+.priorityContainer {
+  width: 40%;
 }
